@@ -8,7 +8,7 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-console.log(getComputerChoice());
+//console.log(getComputerChoice());
 
 //Function for formatting text
 //Takes text ip and converts into lowercase
