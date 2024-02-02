@@ -98,6 +98,7 @@ function playGame(){
         }else{
             gameResult = `It\'s a Tie. ${formatTextForConsole(playerSelection)} ties with ${formatTextForConsole(computerSelection)}.`; 
         }
+        console.log(gameResult);
     }
     console.log(`${playerScore} - ${computerScore}`);
 }
