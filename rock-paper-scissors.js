@@ -34,37 +34,37 @@ function playRound(playerSelection,computerSelection){
     let result = '';
     if (playerSelection === 'rock'){
         if (computerSelection === 'rock'){
-            result = `You are tied. ${formatTextForConsole(playerSelection)} ties ${formatTextForConsole(computerSelection)}.`;
+            result = `tie`;
         }
         else if(computerSelection === 'paper'){
-            result = `You Lose. ${formatTextForConsole(computerSelection)} beats ${formatTextForConsole(playerSelection)}.`;
+            result = `loss`;
         }
         else{
-            result = `You Win. ${formatTextForConsole(playerSelection)} beats ${formatTextForConsole(computerSelection)}.`; 
+            result = `win`; 
         }
     }
     
     else if (playerSelection === 'paper'){
         if (computerSelection === 'rock'){
-            result = `You Win. ${formatTextForConsole(playerSelection)} beats ${formatTextForConsole(computerSelection)}.`;
+            result = `win`;
         }
         else if(computerSelection === 'paper'){
-            result = `You are tied. ${formatTextForConsole(playerSelection)} ties ${formatTextForConsole(computerSelection)}.`;
+            result = `tie`;
         }
         else{
-            result = `You Lose. ${formatTextForConsole(computerSelection)} beats ${formatTextForConsole(playerSelection)}.`; 
+            result = `loss`; 
         }
     }
 
     else{
         if (computerSelection === 'rock'){
-            result = `You Lose. ${formatTextForConsole(computerSelection)} beats ${formatTextForConsole(playerSelection)}.`;
+            result = `loss`;
         }
         else if(computerSelection === 'paper'){
-            result = `You Win. ${formatTextForConsole(playerSelection)} beats ${formatTextForConsole(computerSelection)}.`;
+            result = `win`;
         }
         else{
-            result = `You are tied. ${formatTextForConsole(playerSelection)} ties ${formatTextForConsole(computerSelection)}.`; 
+            result = `tie`; 
         }
     }
     return result;
@@ -74,8 +74,32 @@ function playRound(playerSelection,computerSelection){
 //const computerSelection = getComputerChoice();
 //console.log(playRound(playerSelection, computerSelection));
 
+
+//Function that plays 5 rounds of the game Rock-Paper-Scissors while keeping track of score
+//Returns the winner of the 5 game series
+
 function playGame(){
+    let playerScore = 0;
+    let computerScore = 0;
     for(let i = 0; i < 5;i++){
-        
+        let playerSelection = formatTextForCode(prompt("Enter your Choice:"))
+        let computerSelection = getComputerChoice();
+        let roundResult = playRound(playerSelection,computerSelection);        
+        let gameResult = '';
+        //console.log(roundResult);
+
+        if(roundResult === 'win'){
+            playerScore+=1;
+            gameResult = `You Win. ${formatTextForConsole(playerSelection)} beats ${formatTextForConsole(computerSelection)}.`;
+        }
+        else if(roundResult === 'loss'){
+            computerScore+=1;
+            gameResult = `You Lose. ${formatTextForConsole(computerSelection)} beats ${formatTextForConsole(playerSelection)}.`;
+        }else{
+            gameResult = `It\'s a Tie. ${formatTextForConsole(playerSelection)} ties with ${formatTextForConsole(computerSelection)}.`; 
+        }
     }
+    console.log(`${playerScore} - ${computerScore}`);
 }
+
+playGame();
