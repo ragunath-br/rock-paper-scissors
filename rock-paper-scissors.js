@@ -8,4 +8,28 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-console.log(getComputerChoice())
+console.log(getComputerChoice());
+
+//Function for formatting text
+//Takes text ip and converts into lowercase
+function formatTextForCode(text){
+    return text.toLowerCase();
+}
+
+//console.log(formatTextForCode('Gryat'))
+
+
+//Function for formatting text
+//Takes text ip and converts into firstletter Capital , rest small case for displaying in console.
+function formatTextForConsole(text){
+    return text[0].toUpperCase() + (text.slice(1).toLowerCase());
+}
+
+//console.log(formatTextForConsole('Gryat'))
+
+
+//Function that plays 1 round of the game Rock-Paper-Scissors
+//Returns the result of the game
+function playRound(playerSelection,computerSelection){
+    
+}
