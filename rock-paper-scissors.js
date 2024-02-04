@@ -25,7 +25,7 @@ function formatTextForConsole(text){
     return text[0].toUpperCase() + (text.slice(1).toLowerCase());
 }
 
-//console.log(formatTextForConsole('Gryat'))
+//console.log(formatTextForConsole('gryat'))
 
 
 //Function that plays 1 round of the game Rock-Paper-Scissors
@@ -100,7 +100,24 @@ function playGame(){
         }
         console.log(gameResult);
     }
-    console.log(`${playerScore} - ${computerScore}`);
+    console.log(finalResult(playerScore,computerScore));
+}
+
+
+// Function which will display the final score and result of the entire event
+function finalResult(playerScore,computerScore){
+    resultStr = `PLAYER SCORE: ${playerScore}\nCOMPUTER SCORE: ${computerScore}\n`;
+    if (playerScore > computerScore){
+        resultStr+='You Win. Congrats!!';
+    }
+    else if(computerScore > playerScore){
+        resultStr+='You Lose. The rise of the machine begins!!'; 
+    }
+    else{
+        resultStr+='It\'s a tie. You didn\'t win but you didn\'t lose either.';
+    }
+
+    return resultStr;
 }
 
 playGame();
