@@ -74,16 +74,23 @@ function playRound(playerSelection,computerSelection){
 //const computerSelection = getComputerChoice();
 //console.log(playRound(playerSelection, computerSelection));
 
+//Functions to add listeners and call function when user clicks button
+const rockButton = document.querySelector('#rock');
+const scissorsButton = document.querySelector('#scissors');
+const paperButton = document.querySelector('#paper');
 
+rockButton.addEventListener('click', playGame);
+scissorsButton.addEventListener('click', playGame);
+paperButton.addEventListener('click', playGame);
 //Function that plays 5 rounds of the game Rock-Paper-Scissors while keeping track of score
 //Returns the winner of the 5 game series
 
-function playGame(userInput){
+function playGame(event){
     let playerScore = 0;
     let computerScore = 0;
     //for(let i = 0; i < 5;i++){
         //let playerSelection = formatTextForCode(prompt("Enter your Choice:"))
-        let playerSelection = userInput;
+        let playerSelection = event.target.id;
         let computerSelection = getComputerChoice();
         let roundResult = playRound(playerSelection,computerSelection);        
         let gameResult = '';
@@ -121,4 +128,3 @@ function finalResult(playerScore,computerScore){
     return resultStr;
 }
 
-playGame();
