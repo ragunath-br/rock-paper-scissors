@@ -81,7 +81,7 @@ function playRound(playerSelection,computerSelection){
 function playGame(){
     let playerScore = 0;
     let computerScore = 0;
-    for(let i = 0; i < 5;i++){
+    //for(let i = 0; i < 5;i++){
         let playerSelection = formatTextForCode(prompt("Enter your Choice:"))
         let computerSelection = getComputerChoice();
         let roundResult = playRound(playerSelection,computerSelection);        
@@ -99,7 +99,7 @@ function playGame(){
             gameResult = `It\'s a Tie. ${formatTextForConsole(playerSelection)} ties with ${formatTextForConsole(computerSelection)}.`; 
         }
         console.log(gameResult);
-    }
+    //}
     console.log(finalResult(playerScore,computerScore));
 }
 
