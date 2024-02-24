@@ -75,13 +75,12 @@ function playRound(playerSelection,computerSelection){
 //console.log(playRound(playerSelection, computerSelection));
 
 //Functions to add listeners and call function when user clicks button
-const rockButton = document.querySelector('#rock');
-const scissorsButton = document.querySelector('#scissors');
-const paperButton = document.querySelector('#paper');
+//Rather than adding eventlisteners to each button, it is better to add event listener to the parent of the buttons
+const buttonMenu = document.querySelector('#buttonMenu');
+buttonMenu.addEventListener('click',playGame);
 
-rockButton.addEventListener('click', playGame);
-scissorsButton.addEventListener('click', playGame);
-paperButton.addEventListener('click', playGame);
+
+
 //Function that plays 5 rounds of the game Rock-Paper-Scissors while keeping track of score
 //Returns the winner of the 5 game series
 
