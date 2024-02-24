@@ -102,7 +102,7 @@ function playGame(event){
     }
     
     roundResultMessage.innerText = gameResult;
-        
+    finalResultMessage.innerText = `PLAYER SCORE: ${playerScore}\nCOMPUTER SCORE: ${computerScore}\n`;    
 
     if((playerScore===5) || (computerScore == 5)){
         finalResultMessage.innerText = finalResult(playerScore,computerScore);
