@@ -78,11 +78,12 @@ function playRound(playerSelection,computerSelection){
 //Function that plays 5 rounds of the game Rock-Paper-Scissors while keeping track of score
 //Returns the winner of the 5 game series
 
-function playGame(){
+function playGame(userInput){
     let playerScore = 0;
     let computerScore = 0;
     //for(let i = 0; i < 5;i++){
-        let playerSelection = formatTextForCode(prompt("Enter your Choice:"))
+        //let playerSelection = formatTextForCode(prompt("Enter your Choice:"))
+        let playerSelection = userInput;
         let computerSelection = getComputerChoice();
         let roundResult = playRound(playerSelection,computerSelection);        
         let gameResult = '';
